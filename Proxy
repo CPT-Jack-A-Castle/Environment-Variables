@@ -1,0 +1,17 @@
+==============================================================================
+[+] Proxy Environment Variables
+==============================================================================
+# Using an environment variable to set the proxy has the same effect as using the -x, --proxy option.
+# http_proxy [protocol://]<host>[:port] Sets the proxy server to use for HTTP.
+# HTTPS_PROXY [protocol://]<host>[:port] Sets the proxy server to use for HTTPS.
+# This means that, in addition to ropnop's Example 1 - Proxying curl and wget,
+
+export http_proxy=localhost:8080
+export https_proxy=localhost:8080
+curl example.com
+wget -O /dev/null example.com
+
+## or ##
+
+http_proxy=localhost:8080 https_proxy=localhost:8080 curl example.com
+http_proxy=localhost:8080 https_proxy=localhost:8080 wget -O /dev/null example.com
